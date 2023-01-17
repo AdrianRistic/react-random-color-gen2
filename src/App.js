@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import chalk from 'chalk';
+import randomcolor from 'randomcolor';
+import { useState } from 'react';
 
 function App() {
+  const [lum, setLum] = useState('');
+  const [col, setCol] = useState('');
+
+  const [color] = randomcolor({
+    luminosity: lum,
+    hue: col,
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Random Color Generator</h1>
+      <button onClick={() => {}}>Generate</button>
+      <div>Color: </div>
     </div>
   );
 }
