@@ -1,23 +1,38 @@
-import chalk from 'chalk';
-import randomcolor from 'randomcolor';
+import './App.css';
 import { useState } from 'react';
 
-function App() {
-  const [lum, setLum] = useState('');
-  const [col, setCol] = useState('');
+const RandomColor = () => {
+  const [color, setColor] = useState('#000');
 
-  const [color] = randomcolor({
-    luminosity: lum,
-    hue: col,
-  });
+  const getRgb = () => Math.floor(Math.random() * 256);
+
+  const rgbToHex = (r, g, b) =>
+    '#' +
+    [r, g, b]
+      .map((x) => {
+        const hex = x.toString(16);
+        return hex.length === 1 ? '0' + hex : hex;
+      })
+      .join('');
+
+  const handleGenerate = () => {
+    const color = {
+      r: getRgb(),
+      g: getRgb(),
+      b: getRgb(),
+    };
+
+    setColor(rgbToHex(color.r, color.g, color.b));
+  };
 
   return (
-    <div>
-      <h1>Random Color Generator</h1>
-      <button onClick={() => {}}>Generate</button>
-      <div>Color: </div>
+    <div style={{ backgroundColor: color }} className="container">
+      {' '}
+      <button style={{ color: color }} onClick={handleGenerate}>
+        {' '}
+        {color}{' '}
+      </button>
     </div>
   );
-}
-
-export default App;
+};
+export default RandomColor;
