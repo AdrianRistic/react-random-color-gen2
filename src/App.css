@@ -9,7 +9,6 @@ button {
   padding: 20px 50px;
   font-size: 36px;
   font-weight: 700;
-  font-family: 'Helvetica Neue';
   border: none;
   background-color: white;
   border-radius: 11px;
@@ -19,7 +18,7 @@ button {
   transition: color 0.5s ease-in-out, transform 0.3s ease-in-out,
     box-shadow 0.3s ease-in-out;
 }
-button: focus {
+button:focus {
   outline: none;
 }
 button:hover {
