@@ -29,7 +29,7 @@ const RandomColor = () => {
     <div style={{ backgroundColor: color }} className="container">
       {' '}
       <button style={{ color: color }} onClick={handleGenerate}>
-        'Generate'
+        Generate
       </button>
     </div>
   );
