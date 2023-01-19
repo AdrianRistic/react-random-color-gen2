@@ -16,13 +16,13 @@ const RandomColor = () => {
       .join('');
 
   const handleGenerate = () => {
-    const color = {
+    const colornew = {
       r: getRgb(),
       g: getRgb(),
       b: getRgb(),
     };
 
-    setColor(rgbToHex(color.r, color.g, color.b));
+    setColor(rgbToHex(colornew.r, colornew.g, colornew.b));
   };
 
   return (
