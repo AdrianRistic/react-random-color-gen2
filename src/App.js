@@ -2,7 +2,7 @@ import './App.css';
 import { useState } from 'react';
 
 const RandomColor = () => {
-  const [color, setColor] = useState('#000');
+  const [color, setColor] = useState('#');
 
   const getRgb = () => Math.floor(Math.random() * 256);
 
@@ -29,11 +29,11 @@ const RandomColor = () => {
     <div>
       <div style={{ backgroundColor: color }} className="container">
         {' '}
-        Generated Color: {color}
       </div>
       <button style={{ color: color }} onClick={handleGenerate}>
         Generate
       </button>
+      <div>Generated Color: {color}</div>
     </div>
   );
 };
